@@ -1,0 +1,9 @@
+{
+  "id": 6,
+  "patientName": "Barbra yung",
+  "patientId": "76812116",
+  "predictedDisease": "Flu",
+  "confidence": 0.75,
+  "submittedOn": "2025-11-20T11:44:41",
+  "status": "Pending Review"
+}

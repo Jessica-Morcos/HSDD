@@ -1,0 +1,92 @@
+[
+  {
+    "id": 15,
+    "patientName": "Jessica Morcos",
+    "patientId": "02318312",
+    "predictedDisease": "Flu",
+    "confidence": 0.3,
+    "submittedOn": "2025-11-24T15:32:25",
+    "status": "Reviewed"
+  },
+  {
+    "id": 16,
+    "patientName": "Jessica Morcos",
+    "patientId": "02318312",
+    "predictedDisease": "Flu",
+    "confidence": 0.3,
+    "submittedOn": "2025-11-24T15:40:15",
+    "status": "Reviewed"
+  },
+  {
+    "id": 17,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "predictedDisease": "unknown",
+    "confidence": 0.5,
+    "submittedOn": "2025-11-24T11:03:02",
+    "status": "Pending Review"
+  },
+  {
+    "id": 18,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "predictedDisease": "unknown",
+    "confidence": 0.5,
+    "submittedOn": "2025-11-24T12:06:20",
+    "status": "Pending Review"
+  },
+  {
+    "id": 19,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "predictedDisease": "needs_review",
+    "confidence": 0.5,
+    "submittedOn": "2025-11-24T12:23:00",
+    "status": "Pending Review"
+  },
+  {
+    "id": 20,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "predictedDisease": "unknown",
+    "confidence": 0.5,
+    "submittedOn": "2025-11-24T12:51:19",
+    "status": "Pending Review"
+  },
+  {
+    "id": 21,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "predictedDisease": "needs_review",
+    "confidence": 0.5,
+    "submittedOn": "2025-11-24T13:06:06",
+    "status": "Pending Review"
+  },
+  {
+    "id": 22,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "predictedDisease": "needs_review",
+    "confidence": 0.5,
+    "submittedOn": "2025-11-24T13:06:58",
+    "status": "Pending Review"
+  },
+  {
+    "id": 23,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "predictedDisease": "needs_review",
+    "confidence": 0.5,
+    "submittedOn": "2025-11-24T13:07:21",
+    "status": "Pending Review"
+  },
+  {
+    "id": 26,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "predictedDisease": "vertigo",
+    "confidence": 0.4,
+    "submittedOn": "2025-11-24T14:08:34",
+    "status": "Pending Review"
+  }
+]

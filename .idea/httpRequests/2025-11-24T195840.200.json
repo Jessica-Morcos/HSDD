@@ -1,0 +1,39 @@
+{
+  "patientId": "02318312",
+  "predictions": [
+    {
+      "id": 27,
+      "symptomId": 68,
+      "label": "gastroenteritis",
+      "confidence": 0.65,
+      "confidenceLevel": "low",
+      "createdAt": "2025-11-24T19:57:51"
+    },
+    {
+      "id": 16,
+      "symptomId": 54,
+      "label": "Flu",
+      "confidence": 0.3,
+      "confidenceLevel": "low",
+      "createdAt": "2025-11-24T15:40:15"
+    },
+    {
+      "id": 15,
+      "symptomId": 53,
+      "label": "Flu",
+      "confidence": 0.3,
+      "confidenceLevel": "low",
+      "createdAt": "2025-11-24T15:32:25"
+    }
+  ],
+  "trends": [
+    {
+      "label": "gastroenteritis",
+      "count": 1
+    },
+    {
+      "label": "Flu",
+      "count": 2
+    }
+  ]
+}

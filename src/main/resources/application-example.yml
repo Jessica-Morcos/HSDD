@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/HSDD?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: YOUR_DB_USER
+    password: YOUR_DB_PASSWORD
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none          # <— important: don’t validate or update
+    show-sql: false           # optional
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc.time_zone: UTC
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.hsdd: DEBUG
+
+
+

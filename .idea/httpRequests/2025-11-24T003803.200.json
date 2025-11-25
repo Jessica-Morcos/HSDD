@@ -1,0 +1,93 @@
+[
+  {
+    "userId": 1,
+    "username": "admin",
+    "email": "admin@carepath.ca",
+    "role": "admin",
+    "active": true,
+    "patientId": null,
+    "firstName": null,
+    "lastName": null,
+    "dateOfBirth": null,
+    "phone": null,
+    "createdAt": "2025-11-19T22:45:35Z"
+  },
+  {
+    "userId": 2,
+    "username": "Jessica",
+    "email": "JessicaM@carepath.ca",
+    "role": "patient",
+    "active": true,
+    "patientId": "18669802",
+    "firstName": "Jessica",
+    "lastName": "Morcos",
+    "dateOfBirth": "2003-07-07",
+    "phone": "+11221532067",
+    "createdAt": "2025-11-20T03:50:37Z"
+  },
+  {
+    "userId": 3,
+    "username": "dr.house",
+    "email": "housemd@carepath.ca",
+    "role": "doctor",
+    "active": true,
+    "patientId": null,
+    "firstName": null,
+    "lastName": null,
+    "dateOfBirth": null,
+    "phone": null,
+    "createdAt": "2025-11-20T03:50:59Z"
+  },
+  {
+    "userId": 4,
+    "username": "patient01",
+    "email": "Veezish@carepath.ca",
+    "role": "patient",
+    "active": true,
+    "patientId": "93702967",
+    "firstName": "Veezish",
+    "lastName": "Ahmed",
+    "dateOfBirth": "2000-03-08",
+    "phone": "+12223334444",
+    "createdAt": "2025-11-20T03:51:05Z"
+  },
+  {
+    "userId": 5,
+    "username": "dr.morcos",
+    "email": "morcos@carepath.ca",
+    "role": "doctor",
+    "active": true,
+    "patientId": null,
+    "firstName": null,
+    "lastName": null,
+    "dateOfBirth": null,
+    "phone": null,
+    "createdAt": "2025-11-20T06:10:38Z"
+  },
+  {
+    "userId": 6,
+    "username": "Barbod",
+    "email": "Barbod@carepath.ca",
+    "role": "patient",
+    "active": true,
+    "patientId": "64385452",
+    "firstName": "Barbod",
+    "lastName": "Salehinoparvar",
+    "dateOfBirth": "2003-07-21",
+    "phone": "+12223334444",
+    "createdAt": "2025-11-20T06:12:33Z"
+  },
+  {
+    "userId": 7,
+    "username": "Samih",
+    "email": "Samih@gmail.com",
+    "role": "patient",
+    "active": true,
+    "patientId": "70506780",
+    "firstName": "Samih",
+    "lastName": "Wahdi",
+    "dateOfBirth": "2002-08-24",
+    "phone": "+12345097623",
+    "createdAt": "2025-11-20T07:04:23Z"
+  }
+]

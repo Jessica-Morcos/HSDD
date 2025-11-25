@@ -1,0 +1,19 @@
+{
+  "symptom": {
+    "id": 53,
+    "text": "Fever a bit tired.",
+    "tags": [
+      "fever",
+      "cough",
+      "headache"
+    ],
+    "submittedAt": "2025-11-24T15:32:24.97603"
+  },
+  "prediction": {
+    "id": 15,
+    "symptomId": 53,
+    "label": "Flu",
+    "confidence": 0.3,
+    "createdAt": "2025-11-24T15:32:25.074785"
+  }
+}

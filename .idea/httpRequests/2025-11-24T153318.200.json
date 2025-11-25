@@ -1,0 +1,18 @@
+{
+  "patientId": "02318312",
+  "predictions": [
+    {
+      "id": 15,
+      "symptomId": 53,
+      "label": "Flu",
+      "confidence": 0.3,
+      "createdAt": "2025-11-24T15:32:25"
+    }
+  ],
+  "trends": [
+    {
+      "label": "Flu",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 13,
+    "patientId": "18669802",
+    "title": "Penicillin allergy",
+    "details": "Penicillin allergy",
+    "diagnosedAt": "2025-11-24T00:38:29Z"
+  },
+  {
+    "id": 12,
+    "patientId": "18669802",
+    "title": "Asthma",
+    "details": "uses an inhaler daily",
+    "diagnosedAt": "2025-11-24T00:38:29Z"
+  }
+]

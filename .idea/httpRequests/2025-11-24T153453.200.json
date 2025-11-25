@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "patientName": "Tito Osemabor",
+    "patientId": "82152007",
+    "disease": "Flu",
+    "confidence": 0.9,
+    "createdAt": "2025-11-20T12:15:32Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 2,
+    "patientName": "Tito Osemabor",
+    "patientId": "82152007",
+    "disease": "Flu",
+    "confidence": 0.92,
+    "createdAt": "2025-11-20T13:01:16Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 3,
+    "patientName": "Tito Osemabor",
+    "patientId": "82152007",
+    "disease": "Flu",
+    "confidence": 0.9,
+    "createdAt": "2025-11-20T16:03:40Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 4,
+    "patientName": "Tito Osemabor",
+    "patientId": "82152007",
+    "disease": "Flu",
+    "confidence": 0.87,
+    "createdAt": "2025-11-20T16:08:32Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 5,
+    "patientName": "Barbra yung",
+    "patientId": "76812116",
+    "disease": "Flu",
+    "confidence": 0.89,
+    "createdAt": "2025-11-20T16:09:47Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 6,
+    "patientName": "Barbra yung",
+    "patientId": "76812116",
+    "disease": "Flu",
+    "confidence": 0.75,
+    "createdAt": "2025-11-20T16:44:41Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 7,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "disease": "Flu",
+    "confidence": 0.75,
+    "createdAt": "2025-11-21T00:30:39Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 8,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "disease": "Flu",
+    "confidence": 0.77,
+    "createdAt": "2025-11-21T00:37:24Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 9,
+    "patientName": "Barbra yung",
+    "patientId": "76812116",
+    "disease": "Flu",
+    "confidence": 0.8,
+    "createdAt": "2025-11-20T19:47:58Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 10,
+    "patientName": "Barbra yung",
+    "patientId": "76812116",
+    "disease": "Flu",
+    "confidence": 0.7,
+    "createdAt": "2025-11-20T19:49:09Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 11,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "disease": "Flu",
+    "confidence": 0.83,
+    "createdAt": "2025-11-20T21:03:41Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 12,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "disease": "Flu",
+    "confidence": 0.9,
+    "createdAt": "2025-11-20T21:16:58Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 13,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "disease": "Flu",
+    "confidence": 0.89,
+    "createdAt": "2025-11-24T13:13:50Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 14,
+    "patientName": "Samih Wahdi",
+    "patientId": "59646427",
+    "disease": "Flu",
+    "confidence": 0.86,
+    "createdAt": "2025-11-24T13:21:15Z",
+    "doctor": "Dr. Carter"
+  },
+  {
+    "id": 15,
+    "patientName": "Jessica Morcos",
+    "patientId": "02318312",
+    "disease": "Flu",
+    "confidence": 0.3,
+    "createdAt": "2025-11-24T20:32:25Z",
+    "doctor": "Dr. Carter"
+  }
+]

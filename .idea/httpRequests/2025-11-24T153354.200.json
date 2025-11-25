@@ -1,0 +1,9 @@
+{
+  "id": 15,
+  "patientName": "Jessica Morcos",
+  "patientId": "02318312",
+  "predictedDisease": "Flu",
+  "confidence": 0.3,
+  "submittedOn": "2025-11-24T15:32:25",
+  "status": "Pending Review"
+}
