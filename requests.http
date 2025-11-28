@@ -1,0 +1,376 @@
+### @no-cookie-store
+
+#################################################################
+# AUTH – SIGNUP & LOGIN
+#################################################################
+
+### Signup (Patient)
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "Jessica",
+  "email": "Jessica@carepath.ca",
+  "password": "12345",
+  "firstName": "Jessica",
+  "lastName": "Morcos",
+  "dateOfBirth": "2003-07-07",
+  "phone": "+11221532067"
+}
+
+
+### Login (Patient)
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "Samih",
+  "password": "1234"
+}
+
+> {%
+    let body = response.body;
+    if (typeof body === 'string') {
+        try { body = JSON.parse(body); } catch (e) { body = {}; }
+    }
+
+    // save patient token
+    const token = body.token || "";
+    client.global.set("token", token);
+    client.log("Saved patient token: " + token);
+
+    // save patientId for later requests
+    const patientId = body.patientId || "";
+    client.global.set("patientId", patientId);
+    client.log("Saved patient ID: " + patientId);
+%}
+
+#################################################################
+# ACCOUNT – CHANGE PASSWORD
+#################################################################
+
+
+
+
+### Upload history file for patient
+POST http://localhost:8080/api/history/upload?patientId={{patientId}}
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="medical.txt"
+Content-Type: text/plain
+
+< /Users/jessicamorcos/Desktop/medical.txt
+--MyBoundary--
+
+
+### List medical history for patient
+GET http://localhost:8080/api/history?patientId={{patientId}}
+Authorization: Bearer {{token}}
+
+
+
+#################################################################
+# AUTH – ADMIN LOGIN
+#################################################################
+
+### Admin Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "Admin123!"
+}
+
+> {%
+    let body = response.body;
+    if (typeof body === 'string') {
+        try { body = JSON.parse(body); } catch (e) { body = {}; }
+    }
+
+    // IMPORTANT: use separate variable so the patient token is NOT overwritten
+    const adminToken = body.token || "";
+    client.global.set("adminToken", adminToken);
+    client.log("Saved admin token: " + adminToken);
+%}
+
+### Admin Logout
+POST http://localhost:8080/api/auth/logout
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+### Reset Password
+PUT http://localhost:8080/api/auth/reset-password/11
+Content-Type: application/json
+
+{
+"newPassword": "Admin123!"
+}
+
+
+
+#################################################################
+# ADMIN – USER MANAGEMENT
+#################################################################
+
+### Admin – Create Doctor
+POST http://localhost:8080/api/admin/users
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "username": "dr.morcos",
+  "email": "morcos@carepath.ca",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "firstName": "Jessica",
+  "lastName": "Morcos",
+  "dateOfBirth": "2003-07-07",
+  "phone": "+12111111111"
+}
+
+
+
+### Admin – Create Patient
+POST http://localhost:8080/api/admin/users
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "username": "Barbod",
+  "email": "Barbod@carepath.ca",
+  "password": "Patient123!",
+  "role": "patient",
+  "firstName": "Barbod",
+  "lastName": "Salehinoparvar",
+  "dateOfBirth": "2003-07-21",
+  "phone": "+12223334444"
+}
+
+
+### Admin – Get All Users
+GET http://localhost:8080/api/admin/users
+Authorization: Bearer {{adminToken}}
+
+
+### Admin – Get Single User
+GET http://localhost:8080/api/admin/users/3
+Authorization: Bearer {{adminToken}}
+
+
+### Admin – Update User
+PUT http://localhost:8080/api/admin/users/4
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "email": "updateduser@carepath.ca",
+  "firstName": "UpdatedName",
+  "lastName": "UpdatedLast",
+  "active": true
+}
+
+
+### Admin – Deactivate User
+DELETE http://localhost:8080/api/admin/users/3
+Authorization: Bearer {{adminToken}}
+
+### Admin -Reactivate User
+PUT http://localhost:8080/api/admin/users/4/reactivate
+Authorization: Bearer {{adminToken}}
+
+
+
+### Admin – Audit Logs
+GET http://localhost:8080/api/admin/audit-logs
+Authorization: Bearer {{adminToken}}
+
+
+
+#################################################################
+# PATIENT – SYMPTOMS & RECORDS
+#################################################################
+
+### Submit Symptoms (Manual Tags)
+POST http://localhost:8080/api/patient/symptoms
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "patientId": "{{patientId}}",
+  "text": "Throwing up",
+  "tags": ["fever"]
+}
+
+
+### Submit symptoms (auto using saved patientId)
+POST http://localhost:8080/api/patient/symptoms
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "patientId": "{{patientId}}",
+  "text": "fever and cough for two days",
+  "tags": ["fever", "cough"]
+}
+
+
+### Get Medical History (Symptoms)
+GET http://localhost:8080/api/patient/records/symptoms?patientId={{patientId}}
+Authorization: Bearer {{token}}
+
+
+### Get Predictions
+GET http://localhost:8080/api/patient/records/predictions?patientId={{patientId}}
+Authorization: Bearer {{token}}
+
+
+
+#################################################################
+# RBAC VALIDATION (should fail)
+#################################################################
+
+### Patient tries admin endpoint (should be 403)
+GET http://localhost:8080/api/admin/users
+Authorization: Bearer {{token}}
+
+
+#################################################################
+# DOCTOR – LOGIN & BASIC SETUP
+#################################################################
+
+### Doctor Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "Dr.House",
+  "password": "Doctor123!"
+}
+
+
+> {%
+    let body = response.body;
+    if (typeof body === "string") {
+        try { body = JSON.parse(body); } catch (e) { body = {}; }
+    }
+
+    const token = body.token || "";
+    client.global.set("token", token);
+    client.log("Saved doctor token: " + token);
+%}
+
+### Get recent patients
+GET http://localhost:8080/api/doctor/recent-patients
+Authorization: Bearer {{token}}
+
+### Get record
+GET http://localhost:8080/api/doctor/patient/02318312/full-record
+Authorization: Bearer {{token}}
+
+### Get all low-confidence reports
+GET http://localhost:8080/api/doctor/low-confidence
+Authorization: Bearer {{token}}
+
+### Get a single low-confidence report
+GET http://localhost:8080/api/doctor/low-confidence/15
+Authorization: Bearer {{token}}
+
+### Mark low-confidence report as reviewed
+PUT http://localhost:8080/api/doctor/low-confidence/15/review
+Authorization: Bearer {{token}}
+
+### Check again after marking reviewed
+GET http://localhost:8080/api/doctor/low-confidence/6
+Authorization: Bearer {{token}}
+
+###############################################################
+# DOCTOR – GET ALL REPORTS
+###############################################################
+GET http://localhost:8080/api/doctor/reports
+Authorization: Bearer {{token}}
+
+#################################################################
+# DOCTOR – VIEW PATIENT RECORDS
+#################################################################
+
+### Doctor – Get Patient Predictions
+GET http://localhost:8080/api/doctor/patients/{{patientId}}/predictions
+Authorization: Bearer {{doctorToken}}
+
+
+### Doctor – Get Patient Trends
+GET http://localhost:8080/api/doctor/patients/{{patientId}}/trends
+Authorization: Bearer {{doctorToken}}
+
+
+#################################################################
+# DOCTOR – ANNOTATIONS
+#################################################################
+
+### Doctor – List Annotations for a Prediction
+GET http://localhost:8080/api/doctor/predictions/6/annotations
+Authorization: Bearer {{token}}
+
+
+### Doctor – Create Annotation
+POST http://localhost:8080/api/doctor/annotations
+Authorization: Bearer {{doctorToken}}
+Content-Type: application/json
+
+{
+  "predictionId": 6,
+  "notes": "Patient symptoms are consistent, but severity seems mild.",
+  "correctedLabel": "Mild Flu"
+}
+
+
+### Doctor – Update Annotation
+PUT http://localhost:8080/api/doctor/annotations/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "notes": "Updated after second review. Condition improving.",
+  "correctedLabel": "Recovering Flu"
+}
+
+#################################################################
+# DOCTOR – ISSUE REPORTS
+#################################################################
+
+### Doctor – Get Issues for Prediction
+GET http://localhost:8080/api/doctor/predictions/1/issues
+Authorization: Bearer {{token}}
+
+### Doctor –  Prediction
+GET http://localhost:8080/api/doctor/patients/{{patientId}}/predictions
+Authorization: Bearer {{doctorToken}}
+
+
+### Doctor – Report an Issue
+POST http://localhost:8080/api/doctor/issues
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "predictionId": 1,
+  "issueDescription": "Model incorrectly labeled the case. Symptoms do not match.",
+  "correctLabel": "Not Flu"
+}
+
+#################################################################
+# DOCTOR – NOTIFICATIONS
+#################################################################
+
+### Doctor – Get Unread Notifications
+GET http://localhost:8080/api/doctor/notifications
+Authorization: Bearer {{token}}
+
+
+
+### Doctor – Mark Notification as Read
+POST http://localhost:8080/api/doctor/notifications/3/read
+Authorization: Bearer {{doctorToken}}

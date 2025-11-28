@@ -1,0 +1,16 @@
+[
+  {
+    "id": 8,
+    "predictionId": 38,
+    "message": "Low confidence prediction for patient 69292436",
+    "read": false,
+    "createdAt": "2025-11-25T16:42:03"
+  },
+  {
+    "id": 6,
+    "predictionId": 28,
+    "message": "Low confidence prediction for patient 02318312",
+    "read": false,
+    "createdAt": "2025-11-24T20:00:41"
+  }
+]

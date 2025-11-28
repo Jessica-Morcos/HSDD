@@ -1,0 +1,8 @@
+{
+  "id": 4,
+  "predictionId": 1,
+  "doctorUsername": "dr.house",
+  "issueDescription": "Model incorrectly labeled the case. Symptoms do not match.",
+  "correctLabel": "Not Flu",
+  "createdAt": "2025-11-25T05:40:54.818526"
+}

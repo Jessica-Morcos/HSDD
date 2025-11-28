@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "predictionId": 1,
+    "doctorUsername": "dr.morcos",
+    "issueDescription": "Model incorrectly labeled the case. Symptoms do not match.",
+    "correctLabel": "Not Flu",
+    "createdAt": "2025-11-21T00:02:04"
+  },
+  {
+    "id": 2,
+    "predictionId": 1,
+    "doctorUsername": "dr.morcos",
+    "issueDescription": "Model incorrectly labeled the case. Symptoms do not match.",
+    "correctLabel": "Not Flu",
+    "createdAt": "2025-11-21T00:11:46"
+  },
+  {
+    "id": 3,
+    "predictionId": 1,
+    "doctorUsername": "dr.morcos",
+    "issueDescription": "Model incorrectly labeled the case. Symptoms do not match.",
+    "correctLabel": "Not Flu",
+    "createdAt": "2025-11-21T00:19:07"
+  }
+]
